@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{52397714-DEFA-41C2-AB20-B48B278E3B8B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Escape_Mines.Services</RootNamespace>
+    <AssemblyName>Escape_Mines.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\BaseService.cs" />
+    <Compile Include="Board\BoardServices.cs" />
+    <Compile Include="Board\IBoardServices.cs" />
+    <Compile Include="Factory\Service\IServiceFactory.cs" />
+    <Compile Include="Factory\Object\IObjectFactory.cs" />
+    <Compile Include="Factory\Service\ServiceFactory.cs" />
+    <Compile Include="Factory\Object\ObjectFactory.cs" />
+    <Compile Include="FileConfiguration\FileConfigurationServices.cs" />
+    <Compile Include="FileConfiguration\IFileConfigurationServices.cs" />
+    <Compile Include="GameSettings\GameSettingsServices.cs" />
+    <Compile Include="GameSettings\IGameSettingsServices.cs" />
+    <Compile Include="MovePlayer\IMovePlayerService.cs" />
+    <Compile Include="MovePlayer\MovePlayerForwardService.cs" />
+    <Compile Include="MovePlayer\MovePlayerLeftService.cs" />
+    <Compile Include="MovePlayer\MovePlayerRightService.cs" />
+    <Compile Include="Player\IPlayerServices.cs" />
+    <Compile Include="Player\PlayerServices.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Escape_Mines.Common\Escape_Mines.Common.csproj">
+      <Project>{2E85D960-A55F-48E3-ABC2-F165CDC14EEA}</Project>
+      <Name>Escape_Mines.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
